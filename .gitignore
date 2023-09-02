@@ -16,3 +16,6 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+.vs
+/基础设施服务/Discus.SDK/Discus.Test.WebApi/Properties/PublishProfiles/FolderProfile.pubxml
+/基础设施服务/Discus.SDK/Discus.Test.WebApi/Properties/PublishProfiles/FolderProfile.pubxml.user
