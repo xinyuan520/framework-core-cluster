@@ -12,5 +12,6 @@ namespace Discus.SDK.Redis.Configurations
         public bool EnableBloomFilter { get; set; }
         public string SerializerName { get; set; }
         public DBConfiguration Dbconfig { get; set; } = default!;
+        public string[] Sentinels { get; set; }
     }
 }
