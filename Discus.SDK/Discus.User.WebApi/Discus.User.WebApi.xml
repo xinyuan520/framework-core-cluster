@@ -4,6 +4,19 @@
         <name>Discus.User.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Discus.User.WebApi.Controllers.CacheController.RedisStringSetAsync(Discus.User.Application.Contracts.Dtos.RedisDto)">
+            <summary>
+             设置Redis的值
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.WebApi.Controllers.CacheController.RedisStringGetAsync(System.String)">
+            <summary>
+            获取Redis的值
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
         <member name="M:Discus.User.WebApi.Controllers.FileController.GetAllMyBucketList">
             <summary>
             获取所有存储桶
@@ -87,18 +100,6 @@
             查询配置项
             </summary>
             <param name="id"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Discus.User.WebApi.Controllers.ThirdPartyController.RedisStringSet">
-            <summary>
-            RedisStringSet
-            </summary>
-            <returns></returns>
-        </member>
-        <member name="M:Discus.User.WebApi.Controllers.ThirdPartyController.GetIdGenerater">
-            <summary>
-            测试Id生成器
-            </summary>
             <returns></returns>
         </member>
         <member name="M:Discus.User.WebApi.Controllers.UserInfoController.Create(Discus.User.Application.Contracts.Dtos.UserInfoRequestDto)">

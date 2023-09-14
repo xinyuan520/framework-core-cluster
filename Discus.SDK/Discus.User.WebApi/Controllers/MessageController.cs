@@ -18,7 +18,7 @@ namespace Discus.User.WebApi.Controllers
         /// 发布消息测试
         /// </summary>
         /// <returns></returns>
-        [Route("Publish"), HttpGet]
+        [HttpGet("Publish")]
         public async Task Publish()
         {
             await _messageService.Publish();

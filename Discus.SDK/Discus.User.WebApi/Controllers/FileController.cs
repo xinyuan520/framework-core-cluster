@@ -30,7 +30,7 @@ namespace Discus.User.WebApi.Controllers
         /// 上传文件-文件流
         /// </summary>
         /// <returns></returns>
-        [Route("UploadFile/{ext}"), HttpPost]
+        [HttpPost("UploadFile/{ext}")]
         public async Task<ApiResult> UploadStreamAsync(string ext)
         {
             var fileName = Guid.NewGuid().ToString("N");
@@ -42,7 +42,7 @@ namespace Discus.User.WebApi.Controllers
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        [Route("UploadFilePath"), HttpPost]
+        [HttpPost("UploadFilePath")]
         public async Task<ApiResult> UploadFileAsync(RequestFileParam param)
         {
             var fileName = Guid.NewGuid().ToString("N");
@@ -55,7 +55,7 @@ namespace Discus.User.WebApi.Controllers
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        [Route("DownLoadFile/{fileName}"), HttpGet]
+        [HttpGet("DownLoadFile/{fileName}")]
         public async Task<Stream> DownLoadFileAsync(string fileName)
         {
             return await _fileService.DownLoadFileAsync(fileName);
@@ -66,7 +66,7 @@ namespace Discus.User.WebApi.Controllers
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        [Route("SaveFileAsync"), HttpPost]
+        [HttpPost("SaveFileAsync")]
         public async Task<ApiResult> SaveFileAsync(RequestFileParam param)
         {
             return await _fileService.SaveFileAsync(param.FileName, param.FilePath);
@@ -77,7 +77,7 @@ namespace Discus.User.WebApi.Controllers
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
-        [Route("DeleteFileAsync/{fileName}"), HttpDelete]
+        [HttpDelete("DeleteFileAsync/{fileName}")]
         public async Task<ApiResult> DeleteFileAsync(string fileName)
         {
             return await _fileService.DeleteFileAsync(fileName);

@@ -15,7 +15,7 @@ namespace Discus.User.Application.Registrar
     {
         public override Assembly ApplicationLayerAssembly => Assembly.GetExecutingAssembly();
 
-        public override Assembly ContractsLayerAssembly => typeof(IThirdPartyService).Assembly;
+        public override Assembly ContractsLayerAssembly => typeof(IUserInfoService).Assembly;
 
         public UserApplicationDependencyRegistrar(IServiceCollection services) : base(services)
         {

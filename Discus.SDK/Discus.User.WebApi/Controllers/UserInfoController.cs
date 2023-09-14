@@ -20,7 +20,7 @@ namespace Discus.User.WebApi.Controllers
         /// 创建用户信息
         /// </summary>
         /// <returns></returns>
-        [Route("Create"), HttpPost]
+        [HttpPost("Create")]
         public async Task<ApiResult> Create(UserInfoRequestDto request)
         {
             return await _userInfoService.Create(request);
@@ -31,7 +31,7 @@ namespace Discus.User.WebApi.Controllers
         /// 创建用户信息
         /// </summary>
         /// <returns></returns>
-        [Route("Update"), HttpPost]
+        [HttpPost("Update")]
         public async Task<ApiResult> Update(UserInfoRequestDto request)
         {
             return await _userInfoService.Update(request);
@@ -42,7 +42,7 @@ namespace Discus.User.WebApi.Controllers
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        [Route("Delete/{userId}"), HttpDelete]
+        [HttpDelete("Delete/{userId}")]
         public async Task<ApiResult> Delete(long userId)
         {
             return await _userInfoService.Delete(userId);
@@ -54,7 +54,7 @@ namespace Discus.User.WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         //[CustomerAuthorize]
-        [Route("GetById/{id}"), HttpGet]
+        [HttpGet("GetById/{id}")]
         public async Task<UserInfoDto> GetById(long id)
         {
             return await _userInfoService.GetById(id);
