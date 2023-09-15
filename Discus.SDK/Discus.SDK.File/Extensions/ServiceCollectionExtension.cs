@@ -1,5 +1,6 @@
 ﻿using Discus.SDK.File.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System.Reflection.Metadata.Ecma335;
 
 namespace Discus.SDK.File.Extensions
 {
@@ -11,8 +12,17 @@ namespace Discus.SDK.File.Extensions
                 return services;
 
             services.Configure<MinioConfig>(minioSection)
+                .AddSingleton(provider => {
+                    var options = provider.GetRequiredService<IOptions<MinioConfig>>();
+                    var minioClient = new MinioClient().WithEndpoint(options.Value.Endpoint)
+                                         .WithCredentials(options.Value.AccessKey, options.Value.SecretKey)
+                                         .WithSSL(options.Value.Secure)
+                                         .Build();
+                    return minioClient;
+                })
                 .AddSingleton<IStorageClient, StorageClient>();
             return services;
+
         }
     }
 }

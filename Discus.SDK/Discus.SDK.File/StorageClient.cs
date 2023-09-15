@@ -23,13 +23,10 @@ namespace Discus.SDK.File
 
         
 
-        public StorageClient(IOptions<MinioConfig> options, ILogger<StorageClient> logger)
+        public StorageClient(IOptions<MinioConfig> options, MinioClient minioClient, ILogger<StorageClient> logger)
         {
             _options = options;
-            _minioClient = new MinioClient().WithEndpoint(_options.Value.Endpoint)
-                                            .WithCredentials(_options.Value.AccessKey, _options.Value.SecretKey)
-                                            .WithSSL(_options.Value.Secure)
-                                            .Build();
+            _minioClient = minioClient;
             _logger = logger;
             _bucketName = options.Value.BucketName;
         }
